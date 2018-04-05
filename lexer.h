@@ -13,5 +13,7 @@ typedef struct Lexer {
 void newLexer(char *input, lexer_t *l);
 void readChar(lexer_t *l);
 token_t newToken(char *type, char *ch);
+token_t nextToken(lexer_t *l);
+char * string(char ch);
 
 #endif

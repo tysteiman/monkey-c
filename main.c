@@ -16,6 +16,13 @@ int main(int argc, char **arg)
     token_t n = newToken(TOK_IDENT, "foobar");
     printf("The new token: %s\n", n.type);
 
+    lexer_t l2;
+    newLexer("=;(", &l2);
+    token_t next = nextToken(&l2);
+
+    printf("NEXT TOKEN: %s -> %s\n", next.type, next.literal);
+    next = nextToken(&l2);
+    printf("NEXT TOKEN: %s -> %s\n", next.type, next.literal);
 
     return 0;
 }
