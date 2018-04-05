@@ -1,6 +1,8 @@
 #ifndef MONKEY_LEXER_H
 #define MONKEY_LEXER_H
 
+#include "token.h"
+
 typedef struct Lexer {
     char *input;        // source code
     int   position;     // current pos
@@ -10,5 +12,6 @@ typedef struct Lexer {
 
 void newLexer(char *input, lexer_t *l);
 void readChar(lexer_t *l);
+token_t newToken(char *type, char *ch);
 
 #endif

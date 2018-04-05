@@ -2,6 +2,7 @@
 #include <stdio.h>
 
 #include "lexer.h"
+#include "token.h"
 
 void readChar(lexer_t *l)
 {
@@ -23,4 +24,10 @@ void newLexer(char *input, lexer_t *l)
 {
     l->input = input;
     readChar(l);
+}
+
+token_t newToken(char *type, char *literal)
+{
+    token_t token = {type, literal};
+    return token;
 }

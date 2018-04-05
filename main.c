@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "token.h"
 #include "lexer.h"
+#include "token.h"
 
 int main(int argc, char **arg)
 {
@@ -12,5 +12,10 @@ int main(int argc, char **arg)
     printf("LEXER POSITION: %d\n", l.position);
     printf("LEXER READ POSITION: %d\n", l.readPosition);
     printf("LEXER CHAR: %c\n", l.ch);
+
+    token_t n = newToken(TOK_IDENT, "foobar");
+    printf("The new token: %s\n", n.type);
+
+
     return 0;
 }
