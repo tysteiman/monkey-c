@@ -42,10 +42,10 @@ typedef struct Token {
  * Representation of keyword entries that map keywords
  * to class tokens
  */
-struct keyword {
+typedef struct Keyword {
     char *keyword;
     char *tokenType;
-};
+} keyword_t;
 
 char *lookupIdent(char *string);
 

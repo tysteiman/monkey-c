@@ -5,7 +5,7 @@
 /**
  * Actual registry of our keywords to constants
  */
-struct keyword keywords[] = {
+keyword_t keywords[] = {
     {"fn",     TOK_FUNCTION},
     {"let",    TOK_LET},
     {"if",     TOK_IF},
@@ -17,7 +17,7 @@ struct keyword keywords[] = {
 
 char *lookupIdent(char *string)
 {
-    for (int i = 0; i < (sizeof(keywords) / sizeof(struct keyword)); i++)
+    for (int i = 0; i < (sizeof(keywords) / sizeof(keyword_t)); i++)
         {
             if (strcmp(keywords[i].keyword, string) == 0)
                 {
