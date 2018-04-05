@@ -1,11 +1,16 @@
 #include <stdio.h>
 
 #include "token.h"
+#include "lexer.h"
 
 int main(int argc, char **arg)
 {
-    printf("Function Keyword -> %s\n", lookupIdent("fn"));
-    printf("BANG Keyword -> %s\n", lookupIdent("bang"));
-    printf("TRUE Keyword -> %s\n", lookupIdent("true"));
+    lexer_t l;
+    newLexer("1 + 2;", &l);
+
+    printf("LEXER INPUT: '%s'\n", l.input);
+    printf("LEXER POSITION: %d\n", l.position);
+    printf("LEXER READ POSITION: %d\n", l.readPosition);
+    printf("LEXER CHAR: %c\n", l.ch);
     return 0;
 }
